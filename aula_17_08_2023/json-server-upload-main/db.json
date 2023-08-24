@@ -71,6 +71,20 @@
       ],
       "user_img": "1692211091725.jpeg",
       "id": 4
+    },
+    {
+      "email": "rafaelcustodio@msn.com",
+      "password": "$2a$10$g1guEE18ZRLBAeGYu9TM1.9csAYvrYqNzgr8Ufx8P8OQH1eSQPu7u",
+      "nome": "Rafael Custodio",
+      "cep": "05868-000",
+      "logradouro": "Rua Cachoeira Acrá",
+      "numero": "90",
+      "bairro": "Capão Redondo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "hardSkills": "[\"HTML\",\"CSS\"]",
+      "user_img": "1692833089234.JPG",
+      "id": 5
     }
   ],
   "servicos": [

@@ -9,27 +9,25 @@ import "./style.css";
 
 import api from "../../utils/api";
 
-
-
 function PerfilUsuario() {
 
-    const { idUsuario } = useParams()
+    const { idUsuario } = useParams();
 
-    const [nome, setNome] = useState<string>("")
-    const [foto, setFoto] = useState<string>("")
-    const [email, setEmail] = useState<string>("")
-    const [uf, setUf] = useState<string>("")
-    const [cidade, setCidade] = useState<string>("")
-    const [listaSkills, setListaSkills] = useState<string[]>([])
+    const [ nome, setNome ] = useState<string>("")
+    const [ foto, setFoto ] = useState<string>("")
+    const [ email, setEmail ] = useState<string>("")
+    const [ uf, setUf ] = useState<string>("")
+    const [ cidade, setCidade ] = useState<string>("")
+    const [ listaSkills, setListaSkills ] = useState<string[]>([])
 
     useEffect(() => {
         document.title = "Perfil de " + nome + " - VSConnect"
+
         buscarUsuarioPorId()
-
     }, [])
-
-
+    
     function buscarUsuarioPorId() {
+
         api.get("users/" + idUsuario).then((response: any) => {
             setNome(response.data.nome)
             setFoto(response.data.user_img)
@@ -37,30 +35,30 @@ function PerfilUsuario() {
             setUf(response.data.uf)
             setCidade(response.data.cidade)
             setListaSkills(response.data.hardSkills)
+
         }).catch((error) => {
-            console.error(error)
+            console.log(error)
         })
+
     }
-
-
 
     return (
         <main id="main_perfilusuario">
             <div className="container container_perfil_dev">
                 <div className="perfil_dev_conteudo">
-                    <h1>Página de Perfil - {nome} </h1>
+                    <h1>Página de Perfil - { nome }</h1>
 
                     <div className="topo_dev">
-                        <img src={"http://localhost:3000/static/" + foto} alt={"Foto de perfil de " + nome} />
-                        <h2> {nome} </h2>
+                        <img src={ "http://localhost:3000/static/" + foto } alt={"Foto de perfil de " + nome} />
+                        <h2>{ nome }</h2>
                     </div>
 
                     <div className="contato_local">
                         <div className="contato">
                             <p>Email para contato: </p>
-                            <Link to={"mailto: " + email}> {email} </Link>
+                            <Link to={"mailto:" + email}>{ email }</Link>
                         </div>
-                        <div className="local">
+                        <div className="local"> 
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 384 512">
@@ -69,19 +67,17 @@ function PerfilUsuario() {
                                     d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
                                 />
                             </svg>
-                            <p>De: {cidade} - {uf} </p>
+                            <p>De: { cidade } - { uf }</p>
                         </div>
                     </div>
 
                     <div className="techs">
                         <p>Tecnologias principais: </p>
                         <div className="lista_skills">
-
                             {
                                 listaSkills.map((skill: any, index: number) => {
-                                    return <span key={index}> {skill} </span>
+                                    return <span key={ index }>{ skill }</span>
                                 })
-
                             }
                         </div>
                     </div>
