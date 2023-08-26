@@ -85,6 +85,20 @@
       "hardSkills": "[\"HTML\",\"CSS\"]",
       "user_img": "1692833089234.JPG",
       "id": 5
+    },
+    {
+      "email": "rafael@email.com.br",
+      "password": "$2a$10$zmqWo/o7P3JPlVFinnCWoObNlqI4hpZlT4bb43a9pEJN8FlT6AGjm",
+      "nome": "Rafa Lindao",
+      "cep": "05868-000",
+      "logradouro": "Rua Cachoeira Acará",
+      "numero": "90",
+      "bairro": "Capão Redondo",
+      "cidade": "São Paulo",
+      "uf": "SP",
+      "hardSkills": "[\"HTML\",\"CSS\",\"JAVASCRIPT\"]",
+      "user_img": "1692919633940.jpg",
+      "id": 6
     }
   ],
   "servicos": [
